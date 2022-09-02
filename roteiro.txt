@@ -1,0 +1,31 @@
+* Pega um pedaço do json lá para jogar dentro do data do vue app
+* pega a função getTasks e onde ela está sendo aplicada. Dali você vai achar a outra função createCardElement que cria o card. INGREDIENTES
+*  faz um h1 com seu título
+* div de criação de de taskt usa aquele array para modelo de um card com CSS
+* Faz um v-for="tarefas in tasks" pondo os campos {{}} para um card
+ Objetivo: Agora você lista suas tarefas. 
+
+ Materialize ou bootstrap.
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+ importe também o layout na task do CRUD de exemplo e ajuste 
+
+ Agora importe o fontawesome 
+
+# API
+ npm init
+ npm install -g json-server
+
+ Criando um npm install json-server--save
+ https://www.fabricadecodigo.com/json-server/
+
+Para dar o json-server --watch db.json para iniciar os servidor
+
+
+### Rotas:
+Uma APIRest tem os métodos GET (buscar produtos), POST(Inserir dados), PUT (atualizar dados) e DELETE (retirar os dados).
+
+Utilize a URL que ele fornece, nesse caso o localhost na porta 8000
+"http://localhost:3000/tasks". 
+A adição do ID no final ou algum dos campos que faz a buscar

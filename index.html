@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crie uma tarefa</title>
+    <!-- Materialize CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Fontawesome 6 CND-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav class="orange darken-2">
+        <div class="nav-wrapper"></div>
+      </nav>
+​
+      <div class="container">
+        <div class="section">
+          <!--   Icon Section   -->
+          <div class="row">
+            <h4>Crie e acompanhe suas tarefas!</h4>
+            <!-- card de tarefa que repete para cada item do array -->
+            <div v-for="tarefa in tasks" class="card horizontal">
+              <div class="card-stacked">
+                <div class="organizacaoDoFlex">
+                  <div class="card-content">
+                    <p>{{ tarefa.title }}</p>
+                    <span class="projeto">{{ tarefa.project }}</span>
+                  </div>
+                  <button class="lixo" @click="deleteTask(tarefa.id)">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+                <div class="card-action">
+                  <a @click.prevent="mostrarParaEdicao(tarefa.id)"><i class="fa-solid fa-pen-to-square"></i></a>
+                  <div id="formularioedit" v-show="tarefa.isShow">
+                    <form action="">
+                      <div class="input-field col s12">
+                        <input placeholder="title" id="title" type="text" class="validate" required v-model="tarefa.title" />
+                        <label for="title">Title</label>
+                      </div>
+  
+                      <div class="input-field col s12">
+                        <select class="projectinho" v-model="tarefa.project">
+                          <option value="" disabled selected 
+                          >Choose your option</option>
+                          <option value="Estudos">Estudos</option>
+                          <option value="Financeiro">Financeiro</option>
+                          <option value="Trabalho">Trabalho</option>
+                        </select>
+                        <label for="project">Pick a Project</label>
+                      </div>
+  
+                      <div class="input-field col s12">
+                        <input type="date" id="dueTo" v-model="tarefa.dueTo" data-inputmask="'alias': 'date'"/>
+                        <label for="dueTo">Date due to</label>
+                      </div> 
+                      <a class="waves-effect waves-light btn-large" id="btnSave" @click="edita(id)">Atualizar</a>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="add">
+          <a 
+            class="btn-floating btn-large waves-effect waves-light red"
+            href="tasksNew.html"
+            ><i class="fa-solid fa-plus"></i
+          ></a>
+        </div>
+      </div>
+​
+      <footer class="page-footer orange darken-3">
+        <div class="footer-copyright">
+          <div class="container">© 2022 Frontend</div>
+        </div>
+      </footer>
+    </div>
+    <!-- app -->
+​
+    <!-- Materialize JavaScript CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+​
+    <script src="./todo.js"></script>
+  </body>
+</html>

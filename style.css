@@ -1,0 +1,39 @@
+.projeto {
+    background-color: gray;
+  }
+  .card-tarefa {
+    border: 1px solid #ccc;
+  }
+
+  .footer{
+    position: fixed;
+    bottom: 0;
+  }
+
+  body{
+    height: 100vh;
+  }
+
+  .fa-solid, fa-trash{
+    align-self: end;
+    padding: 10px;
+    border: 3px;
+    color: rgb(224 104 36);
+  }
+  
+  .organizacaoDoFlex{
+    display: flex;
+    flex-direction: initial;
+  }
+
+  .lixo{
+    align-self: end;
+  }
+
+  .projectinho{
+    display: block;
+    margin-top: 5%;
+  }
+  h1{
+    align-items: center;
+  }
